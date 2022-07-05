@@ -56,6 +56,18 @@ btnsAlgos.forEach((btn) => {
   (btn as HTMLButtonElement).addEventListener("click", () => {
     algorithmSelected = (btn as HTMLButtonElement).value;
     console.log(algorithmSelected);
+    // btn.classList.toggle("active-algo");
+  });
+
+  btn.addEventListener("click", (e) => {
+    btnsAlgos.forEach((buttons) => {
+      if ((buttons as HTMLButtonElement).className.includes("active-algo")) {
+        (buttons as HTMLButtonElement).classList.toggle("active-algo");
+      }
+    });
+    e.preventDefault();
+    (btn as HTMLButtonElement).focus();
+    (btn as HTMLButtonElement).classList.toggle("active-algo");
   });
 });
 

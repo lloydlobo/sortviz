@@ -45,3 +45,8 @@ footer {
   border-radius: 2px;
   margin-inline: 2px;
 }
+
+.active-algo {
+  border-bottom: 2px solid var(--clr-secondary);
+  color: var(--clr-secondary);
+}
