@@ -2,6 +2,8 @@
   // import { sortingAlgorithms } from "../common/config";
   // import { useData } from "../common/store";
 
+  import Appbar from "./AppBar.svelte";
+
   let index;
   let shallow;
   const a11yProps = {
@@ -14,7 +16,7 @@
 </script>
 
 <nav>
-  <div class="mx-auto  flex items-center justify-between ">
+  <div class="mx-auto my-0 flex items-center justify-between ">
     <a href="/">
       <div class="visualizer text-center text-3xl ">sortviz</div>
     </a>
@@ -22,4 +24,6 @@
       >{@html svg}</a
     >
   </div>
+
+  <Appbar />
 </nav>

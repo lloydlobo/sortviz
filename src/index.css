@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+  margin-bottom: auto;
+}
+
+footer {
+  align-items: center;
+}
+
+.bar {
+  width: 0.618rem; /* 10px approx */
+  height: 10vh;
+  /* content: ""; */
+  padding: 0;
+  background-color: teal;
+  border-radius: 2px;
+  margin-inline: 2px;
+}
