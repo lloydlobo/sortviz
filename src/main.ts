@@ -155,8 +155,13 @@ const bubbleSort = async (array) => {
 btnSort.addEventListener("click", () => {
   switch (algorithmSelected) {
     case "bubble": {
+      resetCounters(counter);
       bubbleSort(arrayNotSorted);
       break;
     }
   }
 });
+
+const resetCounters = (counter) => {
+  counterDOM.innerHTML = "0";
+};
