@@ -26,29 +26,28 @@
 <main class="grid place-items-center items-center text-center">
   <div class="container relative">
     <h1 class="p-3 text-lg font-bold">an algorithm vizualizer!</h1>
-    <Bars id="barsContainer" className="flex">
-      <!-- {#each count as i}
+    <!-- <Bars id="barsContainer" className="flex" /> -->
+
+    <div
+      class="bars-container my-0 mx-auto flex w-11/12 flex-col items-center justify-between py-5 px-0"
+    >
+      <div id="barsContainer" class="flex flex-row bg-slate-50 ">
         <div class="bar" />
-      {/each} -->
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-    </Bars>
+      </div>
+    </div>
+
     <div class="controls flex flex-wrap items-center justify-center gap-2">
       <div class="count-bars">
         <input
           bind:value={count}
           on:change={increment}
           type="range"
-          id="slide"
+          id="slider"
           min="50"
           max="150"
           step="5"
         />
-        <span>{count}</span>
-        <p>{countHistory}</p>
+        <p>{count}</p>
       </div>
 
       <select name="select-speed" id="speed">
@@ -64,7 +63,7 @@
         <option value="quick">Quick Sort</option>
       </select>
       <button id="randomize_array_btn">Randomize Array</button>
-      <button on:click={() => renderBars} id="sort_btn">Sort</button>
+      <button on:click={() => renderBars} id="btnSort">Sort</button>
     </div>
     <!-- <DisplayAlgo /> -->
     <Controller />
@@ -77,6 +76,14 @@
 <style>
   .container {
     width: min(100%-2rem, 80vw);
+  }
+
+  .bar {
+    width: 0.618rem; /* 10px approx */
+    min-height: 10vw;
+    background-color: teal;
+    border-radius: 2px;
+    margin: 0 2px;
   }
 
   /* https://aerotwist.com/blog/flip-your-animations/ */

@@ -30,7 +30,7 @@ footer {
 
 .bar {
   width: 0.618rem; /* 10px approx */
-  height: 10vh;
+  /* height: 10vh; */
   /* content: ""; */
   padding: 0;
   background-color: teal;
