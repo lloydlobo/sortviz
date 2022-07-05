@@ -20,7 +20,7 @@
   };
 </script>
 
-<header class="header container mx-auto ">
+<header class="header container mx-auto">
   <Navbar />
 </header>
 <main class="grid place-items-center items-center text-center">
