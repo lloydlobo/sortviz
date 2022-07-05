@@ -8,9 +8,11 @@ const app = new App({
 
 export default app;
 
+let barsContainer = document.getElementById("barsContainer");
+const counterDOM = document.createElement("output");
+
 let btnRandomizeArray = document.getElementById("randomize_array_btn");
 let btnSort = document.getElementById("btnSort");
-let barsContainer = document.getElementById("barsContainer");
 
 let algorithmSelect = document.getElementById("algo") as HTMLSelectElement;
 let algorithmSelectTab = document.getElementsByClassName("btnAlgoNav");
@@ -27,6 +29,11 @@ let barsCount = parseInt(slider.value, 10);
 let factorHeight = 2;
 let factorSpeed = 100;
 let arrayNotSorted = new Array(barsCount);
+
+let counter = 0;
+counterDOM.innerHTML = counter.toString();
+const mainDOM = document.querySelector("main");
+mainDOM.appendChild(counterDOM);
 
 let algorithmSelected = "";
 
@@ -108,6 +115,10 @@ const bubbleSort = async (array) => {
   let bars = document.getElementsByClassName("bar");
   for (let i = 0; i < array.length; i += 1) {
     for (let j = 0; j < array.length - i - 1; j += 1) {
+      if (j === 0) {
+        counter += 1;
+        counterDOM.innerHTML = counter.toString();
+      }
       if (array[j] > array[j + 1]) {
         // reset color of bars visited during the previous iteration
         for (let k = 0; k < bars.length; k += 1) {
