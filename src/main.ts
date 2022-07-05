@@ -11,7 +11,10 @@ export default app;
 let btnRandomizeArray = document.getElementById("randomize_array_btn");
 let btnSort = document.getElementById("btnSort");
 let barsContainer = document.getElementById("barsContainer");
+
 let algorithmSelect = document.getElementById("algo") as HTMLSelectElement;
+let algorithmSelectTab = document.getElementsByClassName("btnAlgoNav");
+const btnsAlgos = [...algorithmSelectTab];
 
 let speed = document.getElementById("speed") as HTMLSelectElement;
 let slider = document.getElementById("slider") as HTMLInputElement;
@@ -44,9 +47,16 @@ speed.addEventListener("change", () => {
   console.log(factorSpeed);
 });
 
-algorithmSelect.addEventListener("change", () => {
-  algorithmSelected = algorithmSelect.value;
-  console.log(algorithmSelected);
+// algorithmSelect.addEventListener("change", () => {
+//   algorithmSelected = algorithmSelect.value;
+//   console.log(algorithmSelected);
+// });
+
+btnsAlgos.forEach((btn) => {
+  (btn as HTMLButtonElement).addEventListener("click", () => {
+    algorithmSelected = (btn as HTMLButtonElement).value;
+    console.log(algorithmSelected);
+  });
 });
 
 const getRandomNumber = (min: number, max: number) =>
@@ -80,7 +90,7 @@ btnRandomizeArray.addEventListener("click", () => {
   renderBars(arrayNotSorted);
 });
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const bubbleSort = async (array) => {
   let bars = document.getElementsByClassName("bar");
@@ -95,10 +105,10 @@ const bubbleSort = async (array) => {
             ).style.backgroundColor = `var(--clr-secondary)`;
           }
         }
+
         let temp = array[j];
         array[j] = array[j + 1];
         array[j + 1] = temp;
-
         (
           bars[j] as HTMLDivElement
         ).style.backgroundColor = `var(--clr-tertiary)`;
@@ -116,7 +126,6 @@ const bubbleSort = async (array) => {
     await sleep(factorSpeed);
   }
 
-  console.log("sort");
   return array;
 };
 

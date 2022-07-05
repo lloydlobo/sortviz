@@ -5,38 +5,38 @@
   const tabs = [
     {
       name: "Quick",
-      id: "tabQuick",
-      algorithm: "quickSort",
+      id: "algo",
+      algorithm: "quick",
     },
 
     {
       name: "Merge",
-      id: "tabMerge",
-      algorithm: "mergeSort",
+      id: "algo",
+      algorithm: "merge",
     },
     {
       name: "Heap",
-      id: "tabHeap",
-      algorithm: "heapSort",
+      id: "algo",
+      algorithm: "heap",
     },
     {
       name: "Selection",
-      id: "tabSelection",
-      algorithm: "selectionSort",
+      id: "algo",
+      algorithm: "selection",
     },
     {
       name: "Insertion",
-      id: "tabInsertion",
-      algorithm: "insertionSort",
+      id: "algo",
+      algorithm: "insertion",
     },
     {
       name: "Bubble",
-      id: "tabBubble",
-      algorithm: "bubbleSort",
+      id: "algo",
+      algorithm: "bubble",
     },
     {
       name: "All",
-      id: "tabAll",
+      id: "algo",
       algorithm: "allAlgorithms",
     },
   ];
@@ -56,7 +56,7 @@
     <button
       value={tab.algorithm}
       on:click={() => console.log(tab.id)}
-      class="min-h-[48px]  self-center border-sky-300 px-[12px] py-[6px] text-center text-base font-medium uppercase text-sky-900 transition-all duration-100 ease-in-out hover:border-b-2 hover:text-sky-700 sm:w-40"
+      class="btnAlgoNav min-h-[48px] self-center border-sky-300 px-[12px] py-[6px] text-center text-base font-medium uppercase text-sky-900 transition-all duration-100 ease-in-out hover:border-b-2 hover:text-sky-700 sm:w-40"
       >{tab.name}</button
     >
   {/each}

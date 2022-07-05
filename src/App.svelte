@@ -58,13 +58,13 @@
         <option value="50">Medium</option>
         <option value="10">Fast</option>
       </select>
-      <select name="" id="algo">
+      <!-- <select name="" id="algo">
         <option value="bubble">Bubble Sort</option>
         <option value="insertion">Insertion Sort</option>
         <option value="heap">Heap Sort</option>
         <option value="merge">Merge Sort</option>
         <option value="quick">Quick Sort</option>
-      </select>
+      </select> -->
       <button id="randomize_array_btn">Randomize Array</button>
       <button on:click={() => renderBars} id="btnSort">Sort</button>
     </div>
