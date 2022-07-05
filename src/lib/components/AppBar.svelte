@@ -56,7 +56,7 @@
     <button
       value={tab.algorithm}
       on:click={() => console.log(tab.id)}
-      class="min-h-[48px]  self-center border-indigo-500 px-[12px] py-[6px] text-center text-base font-medium uppercase text-indigo-900 transition-all duration-100 ease-in-out hover:border-b-2 hover:text-indigo-700 sm:w-40"
+      class="min-h-[48px]  self-center border-sky-300 px-[12px] py-[6px] text-center text-base font-medium uppercase text-sky-900 transition-all duration-100 ease-in-out hover:border-b-2 hover:text-sky-700 sm:w-40"
       >{tab.name}</button
     >
   {/each}

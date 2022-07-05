@@ -18,7 +18,11 @@
 <nav>
   <div class="mx-auto my-0 flex items-center justify-between px-4 py-2 ">
     <a href="/">
-      <div class="visualizer text-center text-3xl ">sortviz</div>
+      <div
+        class="visualizer origin-bottom text-center text-3xl text-sky-900 transition-all duration-300 ease-out hover:-translate-y-px hover:text-sky-800 "
+      >
+        sortviz
+      </div>
     </a>
     <a href={urlGithub} alt="sortviz github repo" class="github svg text-lg"
       >{@html svg}</a

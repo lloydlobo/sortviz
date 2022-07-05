@@ -25,7 +25,9 @@
   <Navbar />
 </header>
 <main class="items-center text-center">
-  <h1 class="p-3 text-lg font-bold">a sorting algorithm vizualizer!</h1>
+  <h1 class="p-3 text-lg font-bold text-sky-900">
+    a sorting algorithm vizualizer!
+  </h1>
   <div class="container relative">
     <!-- <Bars id="barsContainer" className="flex" /> -->
 
