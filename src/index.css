@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --clr-primary: #5b57fc;
+  --clr-secondary: #6bb5ff;
+  --clr-tertiary: #00a1e8;
+}
+
 *,
 *::before,
 *::after {
@@ -35,7 +41,7 @@ footer {
   /* height: 10vh; */
   /* content: ""; */
   padding: 0;
-  background-color: teal;
+  background-color: var(--clr-secondary);
   border-radius: 2px;
   margin-inline: 2px;
 }
