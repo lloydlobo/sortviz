@@ -1,10 +1,10 @@
 <script lang="ts">
-  import logo from "./assets/svelte.png";
-  import Bars from "./lib/components/Bars.svelte";
-  import Controller from "./lib/components/Controller.svelte";
+  // import logo from "./assets/svelte.png";
+  // import Bars from "./lib/components/Bars.svelte";
+  // import Controller from "./lib/components/Controller.svelte";
   import Footer from "./lib/components/Footer.svelte";
   import Navbar from "./lib/components/NavBar.svelte";
-  import Counter from "./lib/Counter.svelte";
+  // import Counter from "./lib/Counter.svelte";
 
   import renderBars from "./lib/components/Bars.svelte";
   // const array = [1, 2, 3];
