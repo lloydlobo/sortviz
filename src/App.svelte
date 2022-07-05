@@ -14,25 +14,26 @@
 
   let count = "";
   $: count = "50";
+
   let countHistory = 0;
   const increment = () => {
     countHistory += 1;
   };
 </script>
 
-<header class="header container mx-auto">
+<header class="header">
   <Navbar />
 </header>
-<main class="grid place-items-center items-center text-center">
+<main class="items-center text-center">
+  <h1 class="p-3 text-lg font-bold">a sorting algorithm vizualizer!</h1>
   <div class="container relative">
-    <h1 class="p-3 text-lg font-bold">an algorithm vizualizer!</h1>
     <!-- <Bars id="barsContainer" className="flex" /> -->
 
     <div
       class="bars-container my-0 mx-auto flex w-11/12 flex-col items-center justify-between py-5 px-0"
     >
       <div id="barsContainer" class="flex flex-row bg-slate-50 ">
-        <div class="bar" />
+        <!-- <div class="bar" /> -->
       </div>
     </div>
 
@@ -66,24 +67,17 @@
       <button on:click={() => renderBars} id="btnSort">Sort</button>
     </div>
     <!-- <DisplayAlgo /> -->
-    <Controller />
+    <!-- <Controller /> -->
   </div>
-  <Counter />
+  <!-- <Counter /> -->
 </main>
 
 <Footer />
 
 <style>
   .container {
-    width: min(100%-2rem, 80vw);
-  }
-
-  .bar {
-    width: 0.618rem; /* 10px approx */
-    min-height: 10vw;
-    background-color: teal;
-    border-radius: 2px;
-    margin: 0 2px;
+    width: min(100% - 2rem, 80vw);
+    margin-inline: auto;
   }
 
   /* https://aerotwist.com/blog/flip-your-animations/ */

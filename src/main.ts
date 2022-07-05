@@ -28,7 +28,7 @@ console.log(
 let rangeMin = 1;
 let rangeMax = parseInt(slider.value, 10);
 let barsCount = parseInt(slider.value, 10);
-let factorHeight = 4;
+let factorHeight = 2;
 let factorSpeed = 100;
 let arrayNotSorted = new Array(barsCount);
 

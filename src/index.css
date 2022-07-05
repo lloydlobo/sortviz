@@ -29,7 +29,9 @@ footer {
 }
 
 .bar {
-  width: 0.618rem; /* 10px approx */
+  /* 10px approx */
+  width: 0.618rem;
+  width: clamp(2px, 1vw + 2px, 5px);
   /* height: 10vh; */
   /* content: ""; */
   padding: 0;
