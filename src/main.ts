@@ -16,14 +16,7 @@ let algorithmSelect = document.getElementById("algo") as HTMLSelectElement;
 let speed = document.getElementById("speed") as HTMLSelectElement;
 let slider = document.getElementById("slider") as HTMLInputElement;
 
-console.log(
-  btnRandomizeArray,
-  btnSort,
-  barsContainer,
-  algorithmSelect,
-  speed,
-  slider
-);
+console.log( btnRandomizeArray, btnSort, barsContainer, algorithmSelect, speed, slider); // prettier-ignore
 
 let rangeMin = 1;
 let rangeMax = parseInt(slider.value, 10);
@@ -80,3 +73,9 @@ function renderBars(array: number[]) {
     barsContainer.appendChild(newBar);
   }
 }
+
+btnRandomizeArray.addEventListener("click", () => {
+  arrayNotSorted = createRandomArray();
+  barsContainer.innerHTML = "";
+  renderBars(arrayNotSorted);
+});
