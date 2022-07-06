@@ -31,16 +31,19 @@
   </h1>
 
   <div class="visualizer-wrapper relative flex h-full flex-col">
+    <!-- VIZUALIZER -->
     <div
       class="bars-container my-0 mx-auto mb-auto flex w-11/12 flex-1 flex-col items-center py-5 px-0"
     >
       <div id="barsContainer" class="flex flex-row bg-slate-50  " />
     </div>
+
+    <!-- CONTROLS -->
     <div
       class="controls grid w-screen items-center justify-center gap-2 bg-slate-100 p-4 text-sky-900 sm:flex sm:flex-row sm:flex-wrap sm:justify-around"
     >
       <div
-        class="buttons-sort-and-randomize flex min-w-fit items-center justify-center gap-4"
+        class="sort-restart-randomize flex min-w-fit items-center justify-center gap-x-8"
       >
         <button
           on:click={() => renderBars}
@@ -51,6 +54,15 @@
             class="fa-solid fa-arrow-up-wide-short aspect-square rotate-90 rounded-full p-4  text-2xl leading-[0] text-sky-50"
           />
         </button>
+
+        <div class="restart flex place-content-center items-center">
+          <button id="btnRestart" class="grid"
+            ><i class="fa-solid fa-rotate-left" />
+
+            <span class="text-sm">Restart</span>
+          </button>
+        </div>
+
         <div class="randomize">
           <button id="randomize_array_btn" class="grid">
             <i class="fa-solid fa-shuffle" />
@@ -60,14 +72,31 @@
       </div>
 
       <div class="range-count-speed flex flex-wrap items-center gap-4">
+        <!-- speed SLO-MO-->
+        <div class="sliders sort-speed">
+          <div class:purple-theme={theme === "purple"}>
+            <div class="flex items-center">
+              <label for="speedSloMo">Slo-Mo</label>
+              <Range
+                on:change={(e) => (sliderValueForSpeed = e.detail.value)}
+                id="speedSloMo"
+                max={500}
+              />
+              <output for="speedSloMo">
+                {sliderValueForSpeed}
+              </output>
+            </div>
+          </div>
+        </div>
+        <!-- Array Count - sliders -->
         <div class="sliders count-bars">
           <div class:purple-theme={theme === "purple"}>
-            <label for="slider">Array Count</label>
-            <div class="flex">
+            <div class="flex items-center">
+              <label for="slider">Array Count</label>
               <Range
                 on:change={(e) => (sliderValueForCount = e.detail.value)}
                 id="slider"
-                min={50}
+                min={16}
               />
               <output for="slider">
                 {sliderValueForCount}
@@ -75,33 +104,16 @@
             </div>
           </div>
         </div>
-
-        <div class="sliders sort-speed">
-          <div class:purple-theme={theme === "purple"}>
-            <label for="speedSloMo">Slo-Mo</label>
-            <div class="flex">
-              <Range
-                on:change={(e) => (sliderValueForSpeed = e.detail.value)}
-                id="speedSloMo"
-                max={1500}
-              />
-              <output>
-                {sliderValueForSpeed}
-              </output>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div class="controls-settings">
+      <!-- <div class="controls-settings">
         <div class="restart flex place-content-center items-center">
           <button id="btnRestart" class="grid"
             ><i class="fa-solid fa-rotate-left" />
-
             <span class="text-sm">Restart</span>
           </button>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- <DisplayAlgo /> -->
     <!-- <Controller /> -->
@@ -124,7 +136,9 @@
     --tooltip-bgcolor: #c368ff;
     --tooltip-bg: linear-gradient(45deg, #c368ff, #c965ff);
   }
-
+  output {
+    @apply text-sm font-light;
+  }
   .sliders {
     display: flex;
 
