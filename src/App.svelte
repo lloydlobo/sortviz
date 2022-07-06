@@ -152,7 +152,13 @@
 
     /* width: min(36% - 2rem, 33vw); */
   }
+  .button-sort:disabled {
+    @apply translate-y-px bg-sky-700 shadow-lg transition-all duration-100 ease-linear;
+  }
 
+  .button-sort:disabled:hover {
+    @apply cursor-wait;
+  }
   label {
     margin: 8px;
     font-size: 16px;

@@ -50,13 +50,13 @@
 
 <!-- <div class="time">{time}</div> -->
 <div
-  class="tabs my-2 flex  flex-wrap items-center justify-between rounded bg-slate-100 px-10 align-middle text-sm font-light shadow-lg"
+  class="tabs my-2 flex  flex-wrap items-center justify-between rounded bg-slate-100 px-10 align-middle text-sm font-light shadow-lg transition-all duration-1000 ease-out"
 >
   {#each tabs as tab}
     <button
       value={tab.algorithm}
       id={tab.id}
-      class="btnAlgoNav min-h-[48px] self-center border-sky-300 px-[12px] py-[6px] text-center text-base font-medium uppercase text-sky-900 transition-all duration-100 ease-in-out hover:border-b-2 hover:text-sky-700 focus:border-b-2 focus:text-sky-500 sm:w-40 "
+      class="btnAlgoNav min-h-[48px] self-center border-sky-300 px-[12px] py-[6px] text-center text-base font-medium uppercase text-sky-900 transition-all duration-100 ease-in-out hover:border-b-2 hover:text-sky-700 focus:animate-pulse focus:border-b-2 focus:text-sky-500 sm:w-40 "
       >{tab.name}</button
     >
   {/each}
