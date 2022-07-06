@@ -24,8 +24,9 @@
     on:purpleTheme={(event) => (theme = event.detail.theme)}
   />
 </header>
+
 <main class="items-center text-center">
-  <h1 class="p-3 text-lg font-bold text-sky-900">
+  <h1 class="container p-3 text-lg font-bold text-sky-900">
     a sorting algorithm vizualizer!
   </h1>
 
@@ -54,58 +55,60 @@
             class="fa-solid fa-arrow-up-wide-short aspect-square rotate-90 rounded-full p-4  text-2xl leading-[0] text-sky-50"
           />
         </button>
-        <!-- BUTTON: TOGGLE ALGORITHMS -->
-        <button
-          id="algorithmToggle"
-          on:click={() => tabFocus(tabs)}
-          class="grid"
-        >
-          <i class="fa-solid fa-sort" />
-          <span class="text-sm">Switch</span>
-        </button>
-        <!-- BUTTON: RESTART REBUILD SAME UNSORTED ARRAY -->
-        <button id="btnRestart" class="grid"
-          ><i class="fa-solid fa-rotate-left" />
 
-          <span class="text-sm">Restart</span>
-        </button>
-        <!-- BUTTON: RANDOMIZE ARRAY-->
-        <button id="randomize_array_btn" class="grid">
-          <i class="fa-solid fa-shuffle" />
-          <span class="text-sm">Randomize</span>
-        </button>
-      </div>
+        <div class="buttons-utility grid grid-cols-3">
+          <!-- BUTTON: TOGGLE ALGORITHMS -->
+          <button
+            id="algorithmToggle"
+            on:click={() => tabFocus(tabs)}
+            class="grid"
+          >
+            <i class="fa-solid fa-sort" />
+            <span class="text-sm">Switch</span>
+          </button>
+          <!-- BUTTON: RESTART REBUILD SAME UNSORTED ARRAY -->
+          <button id="btnRestart" class="grid"
+            ><i class="fa-solid fa-rotate-left" />
+            <span class="text-sm">Restart</span>
+          </button>
+          <!-- BUTTON: RANDOMIZE ARRAY-->
+          <button id="randomize_array_btn" class="grid">
+            <i class="fa-solid fa-shuffle" />
+            <span class="text-sm">Randomize</span>
+          </button>
+        </div>
 
-      <div class="range-count-speed flex flex-wrap items-center gap-4">
-        <!-- speed SLO-MO-->
-        <div class="sliders sort-speed">
-          <div class:purple-theme={theme === "purple"}>
-            <div class="flex items-center">
-              <label for="speedSloMo">Slo-Mo</label>
-              <Range
-                on:change={(e) => (sliderValueForSpeed = e.detail.value)}
-                id="speedSloMo"
-                max={500}
-              />
-              <output for="speedSloMo">
-                {sliderValueForSpeed}
-              </output>
+        <div class="range-count-speed flex flex-wrap items-center gap-4">
+          <!-- speed SLO-MO-->
+          <div class="sliders sort-speed">
+            <div class:purple-theme={theme === "purple"}>
+              <div class="flex items-center">
+                <label for="speedSloMo">Slo-Mo</label>
+                <Range
+                  on:change={(e) => (sliderValueForSpeed = e.detail.value)}
+                  id="speedSloMo"
+                  max={500}
+                />
+                <output for="speedSloMo">
+                  {sliderValueForSpeed}
+                </output>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Array Count - sliders -->
-        <div class="sliders count-bars">
-          <div class:purple-theme={theme === "purple"}>
-            <div class="flex items-center">
-              <label for="slider">Array Count</label>
-              <Range
-                on:change={(e) => (sliderValueForCount = e.detail.value)}
-                id="slider"
-                min={16}
-              />
-              <output for="slider">
-                {sliderValueForCount}
-              </output>
+          <!-- Array Count - sliders -->
+          <div class="sliders count-bars">
+            <div class:purple-theme={theme === "purple"}>
+              <div class="flex items-center">
+                <label for="slider">Array Count</label>
+                <Range
+                  on:change={(e) => (sliderValueForCount = e.detail.value)}
+                  id="slider"
+                  min={16}
+                />
+                <output for="slider">
+                  {sliderValueForCount}
+                </output>
+              </div>
             </div>
           </div>
         </div>

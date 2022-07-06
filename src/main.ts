@@ -37,6 +37,7 @@ let arrayNotSorted = new Array(barsCount);
 let arrayNotSortedHistoryMap = [];
 let algorithmSelected = "";
 
+let btnSwitchAlgoClickCount = 0;
 // let counter = 0;
 // counterDOM.innerHTML = counter.toString();
 // const mainDOM = document.querySelector("main");
@@ -181,20 +182,14 @@ main();
 const tabsAlgo = document.querySelectorAll("#algo");
 export let tabs = [...tabsAlgo];
 
-let count = 0;
-
 export async function tabFocus(tabs) {
   console.log(tabs.length);
-  if (count === tabs.length) {
-    count = 0;
+  if (btnSwitchAlgoClickCount === tabs.length) {
+    btnSwitchAlgoClickCount = 0;
   }
-  tabs[count].click();
-  tabs[count].focus();
-  count += 1;
-  console.log(count);
-  return count;
+  tabs[btnSwitchAlgoClickCount].click();
+  tabs[btnSwitchAlgoClickCount].focus();
+  btnSwitchAlgoClickCount += 1;
+  console.log(btnSwitchAlgoClickCount);
+  return btnSwitchAlgoClickCount;
 }
-// await tabs.forEach(async (tab) => {
-//   let counter = await tabFocus();
-//   counter += 1;
-// });
