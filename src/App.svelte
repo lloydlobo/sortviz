@@ -28,18 +28,20 @@
   <h1 class="p-3 text-lg font-bold text-sky-900">
     a sorting algorithm vizualizer!
   </h1>
-  <div class="container relative">
+  <div class="visualizer-wrapper relative flex h-full flex-col">
     <!-- <Bars id="barsContainer" className="flex" /> -->
 
     <div
-      class="bars-container my-0 mx-auto flex w-11/12 flex-col items-center justify-between py-5 px-0"
+      class="bars-container my-0 mx-auto mb-auto flex w-11/12 flex-1 flex-col items-center justify-between py-5 px-0"
     >
-      <div id="barsContainer" class="flex flex-row bg-slate-50 ">
+      <div id="barsContainer" class="flex flex-row bg-slate-50  ">
         <!-- <div class="bar" /> -->
       </div>
     </div>
 
-    <div class="controls flex flex-wrap items-center justify-center gap-2">
+    <div
+      class="controls flex w-screen flex-wrap items-center justify-center gap-2 bg-slate-100 p-4 text-sky-900"
+    >
       <div class="count-bars">
         <input
           bind:value={count}
@@ -57,6 +59,7 @@
         <option value="100">Slow</option>
         <option value="50">Medium</option>
         <option value="10">Fast</option>
+        <option value="0">Actual</option>
       </select>
       <!-- <select name="" id="algo">
         <option value="bubble">Bubble Sort</option>

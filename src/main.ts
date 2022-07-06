@@ -33,7 +33,7 @@ let arrayNotSorted = new Array(barsCount);
 let counter = 0;
 counterDOM.innerHTML = counter.toString();
 const mainDOM = document.querySelector("main");
-mainDOM.appendChild(counterDOM);
+// mainDOM.appendChild(counterDOM);
 
 let algorithmSelected = "";
 
