@@ -26,9 +26,9 @@
       </div>
     </a>
 
-    <div class="flex">
+    <div class="flex items-center justify-center gap-4">
       <ThemeToggle on:defaultTheme on:purpleTheme />
-      <a href={urlGithub} alt="sortviz github repo" class="github svg text-lg"
+      <a href={urlGithub} alt="sortviz github repo" class="github svg text-xl"
         >{@html svg}</a
       >
     </div>
