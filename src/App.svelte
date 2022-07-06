@@ -42,6 +42,32 @@
     <div
       class="controls flex w-screen flex-wrap items-center justify-center gap-2 bg-slate-100 p-4 text-sky-900"
     >
+      <button
+        on:click={() => renderBars}
+        id="btnSort"
+        class="button-sort relative rounded-full bg-sky-400"
+        alt="Sort"
+      >
+        <div class="">
+          <i
+            class="fa-solid fa-arrow-up-wide-short aspect-square rotate-90 rounded-full p-4  text-2xl leading-[0] text-sky-50"
+          />
+        </div>
+      </button>
+      <div class="grid">
+        <button id="randomize_array_btn"
+          ><i class="fa-solid fa-arrow-up-wide-short" />
+        </button>
+        <label for="randomize_array_btn" class="text-xs">Randomize</label>
+      </div>
+
+      <select name="select-speed" id="speed">
+        <option value="100">Slow</option>
+        <option value="50">Medium</option>
+        <option value="10">Fast</option>
+        <option value="0">Actual</option>
+      </select>
+
       <div class="count-bars">
         <input
           bind:value={count}
@@ -54,13 +80,6 @@
         />
         <p>{count}</p>
       </div>
-
-      <select name="select-speed" id="speed">
-        <option value="100">Slow</option>
-        <option value="50">Medium</option>
-        <option value="10">Fast</option>
-        <option value="0">Actual</option>
-      </select>
       <!-- <select name="" id="algo">
         <option value="bubble">Bubble Sort</option>
         <option value="insertion">Insertion Sort</option>
@@ -68,8 +87,6 @@
         <option value="merge">Merge Sort</option>
         <option value="quick">Quick Sort</option>
       </select> -->
-      <button id="randomize_array_btn">Randomize Array</button>
-      <button on:click={() => renderBars} id="btnSort">Sort</button>
     </div>
     <!-- <DisplayAlgo /> -->
     <!-- <Controller /> -->
