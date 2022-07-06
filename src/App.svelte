@@ -54,11 +54,11 @@
           />
         </div>
       </button>
-      <div class="grid">
-        <button id="randomize_array_btn"
-          ><i class="fa-solid fa-arrow-up-wide-short" />
+      <div>
+        <button id="randomize_array_btn" class="grid">
+          <i class="fa-solid fa-shuffle" />
+          <span class="text-xs">Randomize</span>
         </button>
-        <label for="randomize_array_btn" class="text-xs">Randomize</label>
       </div>
 
       <select name="select-speed" id="speed">
