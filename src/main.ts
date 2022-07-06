@@ -14,7 +14,7 @@ const counterDOM = document.createElement("output");
 let btnRandomizeArray = document.getElementById("randomize_array_btn");
 let btnSort = document.getElementById("btnSort");
 
-let algorithmSelect = document.getElementById("algo") as HTMLSelectElement;
+// let algorithmSelect = document.getElementById("algo") as HTMLSelectElement;
 let algorithmSelectTab = document.getElementsByClassName("btnAlgoNav");
 const buttonsAlgo = [...algorithmSelectTab];
 
@@ -177,3 +177,24 @@ function main() {
   map = []; // clear out map for next iteration
 }
 main();
+
+const tabsAlgo = document.querySelectorAll("#algo");
+export let tabs = [...tabsAlgo];
+
+let count = 0;
+
+export async function tabFocus(tabs) {
+  console.log(tabs.length);
+  if (count === tabs.length) {
+    count = 0;
+  }
+  tabs[count].click();
+  tabs[count].focus();
+  count += 1;
+  console.log(count);
+  return count;
+}
+// await tabs.forEach(async (tab) => {
+//   let counter = await tabFocus();
+//   counter += 1;
+// });

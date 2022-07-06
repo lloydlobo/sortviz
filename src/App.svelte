@@ -3,14 +3,13 @@
   import Navbar from "./lib/components/NavBar.svelte";
   import renderBars from "./lib/components/Bars.svelte";
   import Range from "./lib/components/vizualizer/Range.svelte";
+  import { tabFocus, tabs } from "./main";
   // import ThemeToggle from "./lib/components/ThemeToggle.svelte";
   let sliderValueForSpeed = 50;
   let sliderValueForCount = 50;
   let theme = "default";
 
   const toggleTheme = (e) => {
-    console.log("hi");
-    console.log(e.detail);
     if (theme === "default") {
       theme = "purple";
     } else {
@@ -45,30 +44,36 @@
       <div
         class="sort-restart-randomize flex min-w-fit items-center justify-center gap-x-8"
       >
+        <!-- BUTTON: SORT ARRAY WITH SELECTED ALGORITHM -->
         <button
           on:click={() => renderBars}
           id="btnSort"
-          class="button-sort relative rounded-full bg-sky-400"
           alt="Sort"
+          class="button-sort rounded-full bg-sky-400"
           ><i
             class="fa-solid fa-arrow-up-wide-short aspect-square rotate-90 rounded-full p-4  text-2xl leading-[0] text-sky-50"
           />
         </button>
+        <!-- BUTTON: TOGGLE ALGORITHMS -->
+        <button
+          id="algorithmToggle"
+          on:click={() => tabFocus(tabs)}
+          class="grid"
+        >
+          <i class="fa-solid fa-sort" />
+          <span class="text-sm">Switch</span>
+        </button>
+        <!-- BUTTON: RESTART REBUILD SAME UNSORTED ARRAY -->
+        <button id="btnRestart" class="grid"
+          ><i class="fa-solid fa-rotate-left" />
 
-        <div class="restart flex place-content-center items-center">
-          <button id="btnRestart" class="grid"
-            ><i class="fa-solid fa-rotate-left" />
-
-            <span class="text-sm">Restart</span>
-          </button>
-        </div>
-
-        <div class="randomize">
-          <button id="randomize_array_btn" class="grid">
-            <i class="fa-solid fa-shuffle" />
-            <span class="text-sm">Randomize</span>
-          </button>
-        </div>
+          <span class="text-sm">Restart</span>
+        </button>
+        <!-- BUTTON: RANDOMIZE ARRAY-->
+        <button id="randomize_array_btn" class="grid">
+          <i class="fa-solid fa-shuffle" />
+          <span class="text-sm">Randomize</span>
+        </button>
       </div>
 
       <div class="range-count-speed flex flex-wrap items-center gap-4">
