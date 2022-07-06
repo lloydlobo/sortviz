@@ -37,35 +37,30 @@
       <div id="barsContainer" class="flex flex-row bg-slate-50  " />
     </div>
     <div
-      class="controls flex w-screen flex-wrap items-center justify-around bg-slate-100 p-4 text-sky-900"
+      class="controls grid w-screen items-center justify-center gap-2 bg-slate-100 p-4 text-sky-900 sm:flex sm:flex-row sm:flex-wrap sm:justify-around"
     >
       <div
-        class="buttons-sort-and-randomize flex min-w-fit items-center justify-between gap-4"
+        class="buttons-sort-and-randomize flex min-w-fit items-center justify-center gap-4"
       >
         <button
           on:click={() => renderBars}
           id="btnSort"
           class="button-sort relative rounded-full bg-sky-400"
           alt="Sort"
-        >
-          <div class="">
-            <i
-              class="fa-solid fa-arrow-up-wide-short aspect-square rotate-90 rounded-full p-4  text-2xl leading-[0] text-sky-50"
-            />
-          </div>
+          ><i
+            class="fa-solid fa-arrow-up-wide-short aspect-square rotate-90 rounded-full p-4  text-2xl leading-[0] text-sky-50"
+          />
         </button>
-        <div>
+        <div class="randomize">
           <button id="randomize_array_btn" class="grid">
             <i class="fa-solid fa-shuffle" />
-            <span class="text-xs">Randomize</span>
+            <span class="text-sm">Randomize</span>
           </button>
         </div>
       </div>
 
-      <div
-        class="range-count-speed grid grid-cols-2 items-center justify-between gap-4"
-      >
-        <div class="count-bars">
+      <div class="range-count-speed flex flex-wrap items-center gap-4">
+        <div class="sliders count-bars">
           <div class:purple-theme={theme === "purple"}>
             <label for="slider">Array Count</label>
             <div class="flex">
@@ -81,7 +76,7 @@
           </div>
         </div>
 
-        <div class="sort-speed">
+        <div class="sliders sort-speed">
           <div class:purple-theme={theme === "purple"}>
             <label for="speedSloMo">Slo-Mo</label>
             <div class="flex">
@@ -95,6 +90,16 @@
               </output>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="controls-settings">
+        <div class="restart flex place-content-center items-center">
+          <button id="btnRestart" class="grid"
+            ><i class="fa-solid fa-rotate-left" />
+
+            <span class="text-sm">Restart</span>
+          </button>
         </div>
       </div>
     </div>
@@ -120,9 +125,10 @@
     --tooltip-bg: linear-gradient(45deg, #c368ff, #c965ff);
   }
 
-  .theme-buttons {
+  .sliders {
     display: flex;
-    justify-content: center;
+
+    /* width: min(36% - 2rem, 33vw); */
   }
 
   label {

@@ -34,6 +34,7 @@ let barsCount = parseInt(sliderCount.ariaValueNow, 10);
 let factorHeight = 2;
 let factorSpeed = 100;
 let arrayNotSorted = new Array(barsCount);
+let arrayNotSortedHistoryMap = [];
 let algorithmSelected = "";
 
 // let counter = 0;
@@ -47,6 +48,7 @@ sliderCount.addEventListener("mouseout", () => {
   barsContainer.innerHTML = ""; // reset the bars
   // generate new bars container from a random unsorted array
   arrayNotSorted = createRandomArray();
+  arrayNotSortedHistoryMap = [...arrayNotSorted];
   renderBars(arrayNotSorted);
 });
 
@@ -82,20 +84,23 @@ const createRandomArray = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   arrayNotSorted = createRandomArray();
+  arrayNotSortedHistoryMap = [...arrayNotSorted];
   renderBars(arrayNotSorted);
 });
 
-function renderBars(array: number[]) {
+async function renderBars(array: number[], animateTime = 0) {
   for (let i = 0; i < barsCount; i += 1) {
     let newBar = document.createElement("div");
     newBar.classList.add("bar");
     newBar.style.height = (array[i] * factorHeight) / 16 + "rem";
     barsContainer.appendChild(newBar);
+    await sleep(animateTime);
   }
 }
 
 btnRandomizeArray.addEventListener("click", () => {
   arrayNotSorted = createRandomArray();
+  arrayNotSortedHistoryMap = [...arrayNotSorted];
   barsContainer.innerHTML = "";
   renderBars(arrayNotSorted);
 });
@@ -152,7 +157,23 @@ btnSort.addEventListener("click", () => {
     }
   }
 });
-
+const btnRestart = document.getElementById("btnRestart") as HTMLButtonElement;
 const resetCounters = (counter) => {
   counterDOM.innerHTML = "0";
 };
+
+const restartSorting = () => {
+  console.log(arrayNotSortedHistoryMap);
+  barsContainer.innerHTML = "";
+  renderBars(arrayNotSortedHistoryMap, 15);
+  arrayNotSorted = [...arrayNotSortedHistoryMap];
+};
+
+btnRestart.addEventListener("click", restartSorting);
+
+function main() {
+  let map = new Array(barsCount);
+  // push renderBars output to this map
+  map = []; // clear out map for next iteration
+}
+main();

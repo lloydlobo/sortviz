@@ -249,6 +249,7 @@
 
   .range__track {
     height: 6px;
+    min-width: min(200px, 33vw);
     background-color: var(--track-bgcolor, #d0d0d0);
     border-radius: 999px;
   }

@@ -24,10 +24,10 @@
   <button on:click={setPurpleTheme}><i class="fa-solid fa-moon" /></button>
 </div>
 
-<style type="text/css">
-  .theme-buttons {
-    /* background-color: var(--clr-secondary); */
-  }
+<style>
+  /* .theme-buttons { */
+  /* background-color: var(--clr-secondary); */
+  /* } */
   button {
     color: var(--clr-secondary);
     @apply rounded;
