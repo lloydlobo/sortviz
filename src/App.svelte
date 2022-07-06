@@ -3,7 +3,7 @@
   import Navbar from "./lib/components/NavBar.svelte";
   import renderBars from "./lib/components/Bars.svelte";
   import Range from "./lib/components/vizualizer/Range.svelte";
-  import ThemeToggle from "./lib/components/ThemeToggle.svelte";
+  // import ThemeToggle from "./lib/components/ThemeToggle.svelte";
   let sliderValueForSpeed = 50;
   let sliderValueForCount = 50;
   let theme = "default";
