@@ -16,50 +16,41 @@ let btnSort = document.getElementById("btnSort");
 
 let algorithmSelect = document.getElementById("algo") as HTMLSelectElement;
 let algorithmSelectTab = document.getElementsByClassName("btnAlgoNav");
-const btnsAlgos = [...algorithmSelectTab];
+const buttonsAlgo = [...algorithmSelectTab];
 
-let speed = document.getElementById("speed") as HTMLSelectElement;
-let slider = document.getElementById("slider") as HTMLInputElement;
+// let speed = document.getElementById("speed") as HTMLSelectElement;
+// let speed = document.getElementById("speed") as HTMLInputElement;
 
-console.log( btnRandomizeArray, btnSort, barsContainer, algorithmSelect, speed, slider); // prettier-ignore
+let sliderSpeed = document.getElementById("speedSloMo") as HTMLDivElement;
+sliderSpeed.addEventListener("mouseout", () => {
+  factorSpeed = parseInt(sliderSpeed.ariaValueNow, 10);
+});
+
+let sliderCount = document.getElementById("slider") as HTMLDivElement;
 
 let rangeMin = 1;
-let rangeMax = parseInt(slider.value, 10);
-let barsCount = parseInt(slider.value, 10);
+let rangeMax = parseInt(sliderCount.ariaValueMax, 10);
+let barsCount = parseInt(sliderCount.ariaValueNow, 10);
 let factorHeight = 2;
 let factorSpeed = 100;
 let arrayNotSorted = new Array(barsCount);
-
-let counter = 0;
-counterDOM.innerHTML = counter.toString();
-const mainDOM = document.querySelector("main");
-// mainDOM.appendChild(counterDOM);
-
 let algorithmSelected = "";
 
-console.log(arrayNotSorted);
+// let counter = 0;
+// counterDOM.innerHTML = counter.toString();
+// const mainDOM = document.querySelector("main");
+// mainDOM.appendChild(counterDOM);
 
-slider.addEventListener("input", () => {
-  barsCount = parseInt(slider.value, 10);
-  rangeMax = parseInt(slider.value, 10);
+sliderCount.addEventListener("mouseout", () => {
+  barsCount = parseInt(sliderCount.ariaValueNow, 10);
+  rangeMax = parseInt(sliderCount.ariaValueNow, 10);
   barsContainer.innerHTML = ""; // reset the bars
-
   // generate new bars container from a random unsorted array
   arrayNotSorted = createRandomArray();
   renderBars(arrayNotSorted);
 });
 
-speed.addEventListener("change", () => {
-  factorSpeed = parseInt(speed.value, 10);
-  console.log(factorSpeed);
-});
-
-// algorithmSelect.addEventListener("change", () => {
-//   algorithmSelected = algorithmSelect.value;
-//   console.log(algorithmSelected);
-// });
-
-btnsAlgos.forEach((btn) => {
+buttonsAlgo.forEach((btn) => {
   (btn as HTMLButtonElement).addEventListener("click", () => {
     algorithmSelected = (btn as HTMLButtonElement).value;
     console.log(algorithmSelected);
@@ -67,7 +58,7 @@ btnsAlgos.forEach((btn) => {
   });
 
   btn.addEventListener("click", (e) => {
-    btnsAlgos.forEach((buttons) => {
+    buttonsAlgo.forEach((buttons) => {
       if ((buttons as HTMLButtonElement).className.includes("active-algo")) {
         (buttons as HTMLButtonElement).classList.toggle("active-algo");
       }
@@ -116,8 +107,8 @@ const bubbleSort = async (array) => {
   for (let i = 0; i < array.length; i += 1) {
     for (let j = 0; j < array.length - i - 1; j += 1) {
       if (j === 0) {
-        counter += 1;
-        counterDOM.innerHTML = counter.toString();
+        // counter += 1;
+        // counterDOM.innerHTML = counter.toString();
       }
       if (array[j] > array[j + 1]) {
         // reset color of bars visited during the previous iteration
@@ -155,7 +146,7 @@ const bubbleSort = async (array) => {
 btnSort.addEventListener("click", () => {
   switch (algorithmSelected) {
     case "bubble": {
-      resetCounters(counter);
+      // resetCounters(counter);
       bubbleSort(arrayNotSorted);
       break;
     }

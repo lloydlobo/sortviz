@@ -2,6 +2,7 @@
   // import { sortingAlgorithms } from "../common/config";
   // import { useData } from "../common/store";
 
+  import ThemeToggle from "./ThemeToggle.svelte";
   import Appbar from "./AppBar.svelte";
 
   let index;
@@ -19,14 +20,18 @@
   <div class="mx-auto my-0 flex items-center justify-between px-4 py-2 ">
     <a href="/">
       <div
-        class="visualizer origin-bottom text-center text-3xl text-sky-900 transition-all duration-300 ease-out hover:-translate-y-px hover:text-sky-800 "
+        class="logo origin-bottom text-center text-3xl text-sky-900 transition-all duration-300 ease-out hover:-translate-y-px hover:text-sky-800 "
       >
         sortviz
       </div>
     </a>
-    <a href={urlGithub} alt="sortviz github repo" class="github svg text-lg"
-      >{@html svg}</a
-    >
+
+    <div class="flex">
+      <ThemeToggle on:defaultTheme on:purpleTheme />
+      <a href={urlGithub} alt="sortviz github repo" class="github svg text-lg"
+        >{@html svg}</a
+      >
+    </div>
   </div>
 
   <Appbar />
